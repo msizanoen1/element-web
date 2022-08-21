@@ -468,6 +468,7 @@ export class PushProcessor {
      */
     public getPushRuleById(ruleId: string): IPushRule {
         for (const scope of ['global']) {
+            if (this.client.pushRules === undefined) continue;
             if (this.client.pushRules[scope] === undefined) continue;
 
             for (const kind of RULEKINDS_IN_ORDER) {
