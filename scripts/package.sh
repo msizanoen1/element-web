@@ -8,8 +8,8 @@ else
     version=`git describe --dirty --tags || echo unknown`
 fi
 
-yarn clean
-VERSION=$version yarn build
+npm run clean
+VERSION=$version npm run build
 
 # include the sample config in the tarball. Arguably this should be done by
 # `yarn build`, but it's just too painful.
